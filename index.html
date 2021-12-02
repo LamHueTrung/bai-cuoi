@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <title>Tự học Lập Trình Cùng LHT</title>
+    <link rel="icon" href="http://abctech.vn/wp-content/uploads/2017/06/logo-nen-xanh.jpg" type="image/x-icon" />
+
+</head>
+<body>
+    <header class="header">
+        <ul class="header_list">
+            <li class="header_items header-menu">
+                    <i class="menu-mobile fas fa-bars"></i>
+            </li>
+            <ul class="header_list-mobile">
+
+                <li class="header_items">
+                    <a href="https://lamhuetrung.github.io/index.html">
+                        <i class="fas fa-home"></i>
+                        <span></span>
+                    </a>
+                </li>
+               
+                <li class="header_items">
+                    <a href="#bai-tap">
+                        <i class="fas fa-book"></i>
+                        <span></span>
+                    </a>
+                </li>
+                <li class="header_items">
+                    <a href="https://www.facebook.com/T%E1%BB%B1-h%E1%BB%8Dc-l%E1%BA%ADp-Tr%C3%ACnh-c%C3%B9ng-LHT-110968584718753">
+                        <i class="fas fa-question"></i>
+                        <span></span>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="gird__column-2">
+            <div class="content_LT">
+                <div class="content__BT">
+                    <h1 class="BT__tieu-de">Lý Thuyết</h1>
+                    <span class="BT__noi-dung">Xâu bản chất là 1 mảng các ký tự được lưu trữ trên các ô nhớ liên tiếp và kết thúc bằng ký tự '\0', bạn có thể khởi tạo giá trị cho xâu giống như cho mảng:</span>
+                    <pre class="BT__output">
+                        <code class="BT__output">
+char str[] = "abcd";
+char str[50] = "abcd";
+char str[] = {'a', 'b', 'c', 'd', '\0'};
+char str[] = {'a', 'b', 'c', 'd', '\0'};
+char str[5] = {'a', 'b', 'c', 'd', '\0'};
+                        </code>
+                    </pre>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Để nhập dữ liệu và hiển thị một xâu ra màn hình bạn dùng định dạng %s.</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Để nhập được dữ liệu có khoảng trắng cho xâu str bạn cần dùng câu lệnh gets(str);</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Xâu bản chất là 1 mảng các ký tự nên bạn có thể lấy ra phần tử thứ k trong xâu s bằng s[k - 1];</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Bạn có thể sử dụng hàm strlen() (strlen là viết tắt của string length) trong thư viện string.h để lấy ra độ dài của 1 xâu (Khi làm thực tế bạn nên dùng hàm strlen() vì nó ngắn hơn).</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Để kiểm tra xem 2 xâu có giống nhau hay không bạn có thể dùng hàm strcmp() trong thư viện string.h. Hàm này sẽ trả về 0 nếu 2 xâu giống nhau, ngược lại hàm này sẽ trả về một số khác 0 nếu 2 xâu khác nhau.</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Giá trị của các ký tự in thường luôn bằng giá trị của các ký tự in hoa cộng với 32. Từ đó bạn có thể chuyển 1 ký tự từ in thường sang in hoa bằng cách trừ đi 32.</span>
+                    <span class="BT__noi-dung"></span>
+                    <span class="BT__noi-dung">Bạn hãy thử chạy đoạn code dưới đây để hiêu rõ hơn nhé: </span>
+                    <pre class="BT__output">
+                        <code class="BT__output">
+#include < stdio.h >
+
+int main() {
+    printf("a = %d\n", 'a');
+    printf("b = %d\n", 'b');
+    printf("c = %d\n", 'c');
+    printf("d = %d\n\n", 'd');
+    printf("A = %d\n", 'A');
+    printf("B = %d\n", 'B');
+    printf("C = %d\n", 'C');
+    printf("D = %d\n", 'D');
+    return 0;
+}
+                        </code>
+                    </pre>
+                    <span class="BT__noi-dung">Đoạn code dưới đây tạo ra xâu str lưu trữ được 99 ký tự (không phải là 100 do ký tự cuối cùng của một xâu luôn là '\0'), nhập dữ liệu cho xâu str và hiển thị xâu này ra màn hình.</span>
+                    <pre class="BT__output-1">
+                        <code class="BT__output">
+#include < stdio.h >
+
+int main() {
+	// Khai báo xâu str, xâu str lưu trữ được 99 phần tử
+	char str[100];
+	// Nhập dữ liệu vào xâu str
+	scanf("%s", str);
+	// Hiển thị xâu str ra màn hình
+	printf("%s", str);
+	return 0;
+}
+                    </code>
+                    </pre>
+                    <span class="BT__noi-dung--TD">Lưu ý:</span>
+                    <span class="BT__noi-dung">+ Khi nhập dữ liệu cho xâu thì không sử dụng toán tử & trong hàm scanf().</span>
+                    <span class="BT__noi-dung">+ Khi chạy chương trình ở trên máy, bạn không nhập tên và địa chỉ có khoảng trắng vì hàm scanf() không đọc được khoảng trắng.</span>
+                    <span class="BT__noi-dung">+ Bạn không thể sử dụng toán tử == để kiểm tra 2 xâu có giống nhau hay không vì nếu áp dụng toán tử này lên 2 xâu thì đó là phép so sánh địa chỉ của phần tử đầu tiên của 2 xâu.</1></span>
+                </div>
+            </div>
+            <div class="content__HD">
+                <h1>Chuỗi / Hàm Đệ Quy</h1>
+                <video class="video" controls>
+                    <source src="./assets/video/video.webm" type="video/mp4">
+                </video>
+                <a href="" class="btn-next not-next">Bài tiếp theo</a>
+                <div class="container__note">
+                    <h2>Nhắc nhở: có các bài tập nhé.</h2>
+                </div>
+                <div class="container__learn" id="bai-tap">  
+                    <span  class="learn__heading">BÀI TẬP</span>
+                    <div class="learn__content" id="bai-tap">
+                        <div class="learn__ex">
+                            <a class="learn__slide-1 bai-tap">Bài tập 1</a>
+                            <span class="noidung-baitap">
+                                <pre class="BT__output">
+                                    <code class="BT__output">
+Bạn hãy viết chương trình nhập vào từ bàn phím xâu str
+ và hiển thị xâu này ra màn hình.
+                                    </code>
+                                </pre>
+                            </span>
+                        </div>
+                        <div class="learn__ex">
+                            <a class="learn__slide-1 bai-tap">Bài tập 2</a>
+                            <span class="noidung-baitap">
+                                <pre class="BT__output">
+                                    <code class="BT__output">
+Cho xâu s được nhập từ bàn phím. 
+Bạn hãy viết chương trình chuyển các ký tự in thường
+trong xâu s thành in hoa và hiển thị xâu s ra màn hình.
+                                    </code>
+                                </pre>
+                            </span>
+                        </div>
+                        <div class="learn__ex">
+                            <a class="learn__slide-1 bai-tap">Bài tập 3</a>
+                            <span class="noidung-baitap">
+                                <pre class="BT__output">
+                                    <code class="BT__output">
+Viết chương trình nhập vào tên của 2 người, 
+bạn hãy kiểm tra xem tên 2 người này có giống nhau không.
+                                    </code>
+                                </pre>
+                            </span>
+                        </div>
+                        <div class="learn__ex">
+                            <a class="learn__slide-1 bai-tap">Bài tập 4</a>
+                            <span class="noidung-baitap">
+                                <pre class="BT__output">
+                                    <code class="BT__output">
+Cho ký tự c và xâu s được nhập từ bàn phím.
+Bạn hãy viết chương trình in ra số lần xuất hiện của ký tự c trong xâu s.
+                                    </code>
+                                </pre>
+                            </span>
+                        </div>
+                        <div class="learn__ex">
+                            <a class="learn__slide-1 bai-tap">Bài tập 5</a>
+                            <span class="noidung-baitap">
+                                <pre class="BT__output">
+                                    <code class="BT__output">
+Cho số nguyên n được nhập từ bàn phím, 
+bạn hãy viết hàm đệ quy trả về n! (n giai thừa).
+                                    </code>
+                                </pre>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
